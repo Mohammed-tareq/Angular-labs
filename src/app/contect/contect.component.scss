@@ -1,0 +1,50 @@
+.contact-sec{
+    background-image: radial-gradient(white 5%,#E6E6E6 60%)
+}
+.contact h2 {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 2.2rem;
+    color: #000;
+    border: 5px solid #000;
+    padding: 15px 1.5em;
+
+}
+.contact-form{
+   
+    gap: 15px;
+    input, textarea{
+        width: 100%;
+        padding: 10px;
+        margin: 20px ;
+        bottom: none;
+        background-color: transparent;
+        border-left: 4px solid #000;
+        border-bottom: 4px solid #000;
+        outline: none ;
+        font-size: 1.2rem;
+        &:focus {
+            outline: none ;
+            box-shadow: none ;
+            border: 1px solid #000;
+            
+        }
+    }
+}
+.explore{
+    display: inline-block;
+    font-size: 1.5rem;
+    color: #000;
+    font-weight: bold;
+    padding: 0.2em 1.5em;
+    border: none;
+    background-color: transparent;
+    border-left: #000 solid 3px;
+    border-right: #000 solid 3px;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+}
+.explore:hover{
+    background-color: #302e2e;
+    color: #fff;
+}

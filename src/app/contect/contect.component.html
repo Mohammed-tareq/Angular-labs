@@ -1,0 +1,40 @@
+<section class="contact-sec">
+    <div class="container-fluid mt-5 contact">
+        <div   data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="4000"class="row text-center align-content-center justify-content-center">
+            <div class="col-md-12 mt-5">
+                <h2>CONTACT ME </h2>
+            </div>
+            <div class="col-md-6  mt-5">
+                <p>text</p>
+            </div>
+
+            <div class="col-md-12 mt-4">
+                <img src="assets/images/separatorBlack 1.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid  contact-form">
+        <div class="row text-center align-content-center justify-content-center">
+            <div class="col-md-12 mt-5">
+                <h2>GET IN TOUCH</h2>
+            </div>
+            <div data-aos="zoom-out-down" class="col-md-6  mt-5 ">
+                <form (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Your Name" [(ngModel)]="formData.name" name="name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Your Email" [(ngModel)]="formData.email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Your Message" rows="3" [(ngModel)]="formData.message" name="message"></textarea>
+                    </div>
+                    <button type="submit" class="explore">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
