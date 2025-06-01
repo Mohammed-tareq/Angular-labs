@@ -1,0 +1,22 @@
+
+
+<app-search [(AddUser)]="userAction"></app-search>
+
+@if (userAction) {
+
+}@else{
+
+    <div class="container">
+    
+         @for(user of userInfo; track $index){
+            <div class="cart-container">
+                
+                <img [src]="user.img" alt="">
+                <p>Name : {{user.name}} <span><i *ngIf="user.isActive" class="fa-solid fa-circle-check"></i><i *ngIf="!user.isActive" class="fa-solid fa-xmark"></i></span></p>
+                <p>Email : {{user.email}}</p>
+                <p>phone : {{user.phone}}</p>
+            </div>
+            } 
+    </div>
+}
+<i class=""></i>

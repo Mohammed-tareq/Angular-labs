@@ -1,0 +1,15 @@
+@if(AddUser){
+<div class="container-form">
+    <form>
+        <input type="text" placeholder="Add user name">
+        <input type="text" placeholder="Add user email">
+        <input type="phone" placeholder="Add user phone">
+        <button>ADD</button>
+        <button (click)="backToSearch()">Back To Search</button>
+    </form>
+</div>
+}@else {
+<input type="text" placeholder="Search ..." />
+<button type="button">Search</button>
+<button type="button" (click)="addUser()">ADD New User</button>
+}
