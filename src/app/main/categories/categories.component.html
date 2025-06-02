@@ -1,0 +1,9 @@
+<div class="my-3 w-50 m-auto">
+    <select id="category" class="form-control" (change)="filterByCategory($event)">
+        <option disabled selected>Search By Category ..</option>
+        <option value="all">All</option>
+        @for(category of categories ; track $index) {
+            <option [value]="category">{{ category }}</option>
+        }
+    </select>
+</div>

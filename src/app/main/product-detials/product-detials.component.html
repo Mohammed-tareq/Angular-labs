@@ -1,0 +1,41 @@
+<div class="container py-5" *ngIf="!loading && product">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="product-image">
+                <img [src]="product.image" [ngStyle]="{height: '30rem'}" [alt]="product.title" class="img-fluid">
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="product-details">
+                <h1 class="mb-4">{{ product.title }}</h1>
+                <div class="category mb-3">
+                    <span class="badge bg-primary">{{ product.category }}</span>
+                </div>
+                <div class="rating mb-3">
+                    <span class="stars">★</span>
+                    <span class="rate">{{ product.rating.rate }}</span>
+                    <span class="count">({{ product.rating.count }} reviews)</span>
+                </div>
+                <div class="price mb-4">
+                    <h2 class="text-success">{{ product.price | currency: "USD" }}</h2>
+                </div>
+                <div class="description mb-4">
+                    <h3>Description</h3>
+                    <p>{{ product.description }}</p>
+                </div>
+                <div class="actions">
+                    <button class="btn btn-primary btn-lg">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" *ngIf="loading">
+    <div class="text-center py-5">
+        <app-spinner></app-spinner>
+    </div>
+</div>
+<div class="container" *ngIf="!loading && !product">
+    <div class="alert alert-danger mt-5 text-center">{{error }} </div>
+</div>

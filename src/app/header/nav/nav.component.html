@@ -1,0 +1,18 @@
+<nav class="nav-bar">
+
+    <div class="container">
+        <div class="content">
+            <h2 class="logo">Market</h2>
+            <ul>
+                <li (click)="navigateToProducts()">Products</li>
+                <li (click)="navigateToCart()">Cart</li>
+                @if( isLoggedIn() ) {
+                    <li (click)="logout()">LogOut</li>
+                }@else {
+
+                    <li (click)="login()">Login</li>
+                }
+            </ul>
+        </div>
+    </div>
+</nav>

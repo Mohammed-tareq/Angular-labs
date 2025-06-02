@@ -1,0 +1,35 @@
+<div class="container">
+    <app-categories (categorySelected)="getProductsByCategory($event)"></app-categories>
+
+    <div *ngIf="loading" class="text-center">
+        <app-spinner> </app-spinner>
+    </div>
+
+    <div *ngIf="error" class="alert alert-danger">
+        {{ error }}
+    </div>
+
+    <div class="row" *ngIf="!loading && !error">
+        @for(product of products ; track $index){
+
+        <div class="col-md-3" [routerLink]="'/product/' + product.id">
+            <div class="item">
+                <img [src]="product.image" [alt]="product.title">
+                <div class="body">
+                    <h4>{{ product.title }}</h4>
+                    <p>{{ product.description }}</p>
+                </div>
+                <div class="px-3 mb-2 d-flex justify-content-between align-items-center">
+                    <div class="d-flex w-50 col-auto">
+                        <input type="number" class="form-control my-4" [ngStyle]="{'height': '30px'}"
+                            [(ngModel)]="numQuantity" min="1" max="10">
+                        <button class="btn btn-success m-3"
+                            (click)="addToCart({item:product , quantity: numQuantity})">ADD</button>
+                    </div>
+                    <span>{{ product.price | currency: "USD" }}</span>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>

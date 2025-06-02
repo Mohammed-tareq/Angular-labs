@@ -1,0 +1,91 @@
+.item{
+    width: 100%;
+    text-decoration: none;
+    color: #333;
+    margin: 1rem;
+    display: inline-block;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(202, 37, 16, 0.1);
+    transition: all 0.2s ease-in-out;
+    img{
+        width: 100%;
+        height: 250px;
+        object-fit: contain;
+        border-radius: 15px 15px 0 0;
+    }
+    p{
+        margin: 1rem;
+        height: 50px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        line-height: 1.5;
+    }
+    h4{ 
+        margin: 0 1rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    &:hover{
+        box-shadow: 0 4px 10px rgba(202, 37, 16, 0.2);
+        transform: translateY(-5px);
+    }
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  
+  .stars {
+    color: #ffc107;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    
+    &::before {
+      content: '★';
+      margin-right: 0.25rem;
+    }
+  }
+  
+  .rate {
+    font-weight: bold;
+    color: var(--text-color);
+  }
+  
+  .count {
+    color: #666;
+    font-size: 0.9rem;
+  }
+  
+  // Star rating animation
+  .stars {
+    position: relative;
+    display: inline-block;
+    
+    &::after {
+      content: '★★★★★';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 0;
+      color: #ffc107;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
+  
+  // Dynamic star rating
+  @for $i from 1 through 5 {
+    &[data-rating="#{$i}"] .stars::after {
+      width: percentage($i / 5);
+    }
+  }
+}
